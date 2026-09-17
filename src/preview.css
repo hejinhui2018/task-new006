@@ -1,0 +1,288 @@
+/*
+ * ===== 预览组件样式 =====
+ * 约定：本文件中的【颜色】只能引用 var(--t-*) 令牌变量（由 PreviewPanel
+ * 根据依赖图解析结果注入），不允许出现任何硬编码色值——
+ * 这样组件就不可能绕过依赖图。字号、间距、圆角等几何属性除外。
+ */
+
+.pv-scope {
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--t-color-bg-canvas);
+  color: var(--t-color-text-primary);
+  border: 1px solid var(--t-color-border-default);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ----- 反色导航 ----- */
+
+.pv-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 18px;
+  background: var(--t-color-bg-inverse);
+  color: var(--t-color-text-inverse);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pv-nav-brand {
+  font-weight: 700;
+}
+
+.pv-nav-links {
+  flex: 1;
+  opacity: 0.85;
+  word-spacing: 8px;
+}
+
+.pv-body {
+  padding: 20px 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pv-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.pv-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--t-color-text-secondary);
+  text-transform: uppercase;
+}
+
+/* ----- 文本排版（字号与对比度检查对保持一致） ----- */
+
+.pv-h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--t-color-text-heading);
+}
+
+.pv-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--t-color-text-primary);
+  max-width: 560px;
+}
+
+.pv-text-secondary {
+  margin: 0;
+  font-size: 14px;
+  color: var(--t-color-text-secondary);
+}
+
+.pv-link {
+  font-size: 16px;
+  color: var(--t-color-text-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ----- 按钮与状态 ----- */
+
+.pv-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pv-btn {
+  border: none;
+  border-radius: 7px;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.pv-btn-sm {
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.pv-btn-primary {
+  background: var(--t-color-accent-default);
+  color: var(--t-color-text-on-accent);
+}
+
+.pv-btn-primary:hover,
+.pv-btn-primary.is-hover {
+  background: var(--t-color-accent-hover);
+}
+
+.pv-btn-primary:active,
+.pv-btn-primary.is-active {
+  background: var(--t-color-accent-active);
+}
+
+.pv-btn-secondary {
+  background: var(--t-color-accent-subtle);
+  color: var(--t-color-accent-text);
+}
+
+.pv-btn-secondary:hover,
+.pv-btn-secondary.is-hover {
+  background: var(--t-color-accent-hover);
+  color: var(--t-color-text-on-accent);
+}
+
+.pv-btn-secondary:active,
+.pv-btn-secondary.is-active {
+  background: var(--t-color-accent-active);
+  color: var(--t-color-text-on-accent);
+}
+
+.pv-btn-danger {
+  background: var(--t-color-danger-default);
+  color: var(--t-color-text-on-danger);
+}
+
+.pv-btn-danger:hover,
+.pv-btn-danger.is-hover {
+  background: var(--t-color-danger-hover);
+}
+
+.pv-btn-danger:active,
+.pv-btn-danger.is-active {
+  background: var(--t-color-danger-hover);
+}
+
+.pv-btn:disabled {
+  background: var(--t-color-bg-disabled);
+  color: var(--t-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.pv-state-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ----- 徽章与提示 ----- */
+
+.pv-badge {
+  display: inline-block;
+  background: var(--t-color-badge-bg);
+  color: var(--t-color-badge-text);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pv-alert {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+}
+
+.pv-alert-error {
+  background: var(--t-color-danger-surface);
+  color: var(--t-color-danger-text);
+}
+
+.pv-alert-success {
+  background: var(--t-color-success-surface);
+  color: var(--t-color-success-text);
+}
+
+/* ----- 卡片 ----- */
+
+.pv-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--t-color-bg-surface);
+  border: 1px solid var(--t-color-border-default);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.pv-card-title {
+  font-size: 14px;
+  color: var(--t-color-text-secondary);
+}
+
+.pv-card-metric {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--t-color-text-heading);
+}
+
+.pv-card-sub {
+  font-size: 14px;
+  color: var(--t-color-text-primary);
+  margin-bottom: 4px;
+}
+
+/* ----- 表单 ----- */
+
+.pv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.pv-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--t-color-text-primary);
+}
+
+.pv-input {
+  background: var(--t-color-bg-surface);
+  border: 1px solid var(--t-color-border-default);
+  color: var(--t-color-text-primary);
+  border-radius: 7px;
+  padding: 7px 10px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.pv-input::placeholder {
+  color: var(--t-color-text-placeholder);
+}
+
+.pv-input:hover {
+  border-color: var(--t-color-border-strong);
+}
+
+.pv-input:focus {
+  outline: 2px solid var(--t-color-border-focus);
+  outline-offset: 1px;
+  border-color: var(--t-color-border-focus);
+}
+
+.pv-input:disabled {
+  background: var(--t-color-bg-disabled);
+  color: var(--t-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.pv-help {
+  margin: 0;
+  font-size: 12px;
+  color: var(--t-color-text-muted);
+}
